@@ -1,13 +1,13 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc=new Scanner(System.in);
         System.out.println("--------------------");
         System.out.println("     QUIZMASTER");
         System.out.println("--------------------");
         System.out.println("Welcome to QuizMaster!");
         System.out.println("Let's test your general knowledge!\n");
-        Question[] qns = QuestionBank.getQuestions();
+        Question[] qns=QuestionBank.getQuestions();
         java.util.ArrayList<Question> rem =
                 new java.util.ArrayList<>(java.util.Arrays.asList(qns));
         while (true) {
@@ -32,10 +32,10 @@ public class Main {
                 int selectedAnswer =
                         ans.toUpperCase().charAt(0) - 'A';
                 if (selectedAnswer==curr.correctAnswer) {
-                    System.out.println("Correct! ✓");
+                    System.out.println("Correct!");
                     score++;
                 } else {
-                    System.out.println("Wrong! ✗");
+                    System.out.println("Wrong!");
                     System.out.println("Correct answer: "
                             + (char)('A' + curr.correctAnswer)
                             + ". "
@@ -57,5 +57,6 @@ public class Main {
                 break;
             }
         }
+        sc.close();
     }
 }
